@@ -1,6 +1,7 @@
 import com.trendyol.shipment.Basket;
 import com.trendyol.shipment.Product;
 import com.trendyol.shipment.ShipmentSize;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -36,7 +37,7 @@ class BasketTest {
         assertThat(basket.getShipmentSize(), equalTo(orderShipmentSize));
     }
 
-    private static Stream<Arguments> shipmentSizeOfProductsAndBasketShipmentSize() {
+    private static @NotNull Stream<Arguments> shipmentSizeOfProductsAndBasketShipmentSize() {
         return Stream.of(
                 Arguments.of(Arrays.asList(ShipmentSize.SMALL, ShipmentSize.SMALL), ShipmentSize.SMALL),
                 Arguments.of(Arrays.asList(ShipmentSize.SMALL, ShipmentSize.SMALL, ShipmentSize.SMALL), ShipmentSize.MEDIUM),
